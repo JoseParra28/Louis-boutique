@@ -1,3 +1,60 @@
-h1 {
-    color: red;
+:root {
+    --background-color: rgb(18, 18, 18) ;
+    --font-color: rgb(7, 7, 7) ;
+    --font-color-2: rgb(227, 224, 224) ;
+}
+html {
+    height: 100%;
+}
+body {
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: var(--font-color);
+    font-weight: 100;
+}
+h1, h2, h3, h4, h5 {
+    color: var(--font-color);
+}
+p {
+    color: var(--font-color);
+}
+.logo-font {
+    color: var(--font-color-2);
+}
+
+#delivery-banner {
+  position: relative;
+}
+.navbar-brand {
+    font-size: 2rem;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.img-div{
+    background-image: url(/media/ASKET-SWEATERS.jpg);
+    background-size: cover;
+    height: 80vh;
+    display: flex;   
+}
+.section-img {
+    background-image: url(/media/section-img.jpg);
+    background-size: cover;
+}
+.all-prod {
+    display: flex;
+    justify-content: center;
+}
+.products {
+    display: flex;
+    justify-content:space-evenly;
+}
+.products li {
+    margin: 7%;
+    display:inline-block;
+}
+.products a {
+    justify-content: center;
+    text-decoration: none;
+    font-size: 1rem;
 }
