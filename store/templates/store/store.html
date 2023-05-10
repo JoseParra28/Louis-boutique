@@ -4,27 +4,25 @@
 {% block content %}
 
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
-<!-- start puython loop here -->
-    <div class="col">
-      <div class="card shadow-sm">
-        <img class="img-fluid" alt="Responsive image" src="">
-        <div class="card-body">
-          <p class="card-text">
-            <a class="text-info text-decoration-none" href="">product</a>
-            <br>
-            <a class="text-info text-decoration-none" href="">tittle</a>
-          </p>
-          <div class="d-flex justify-content-between align-items-center">
-            <h5> € price </h5>
-            <button class="btn btn-outline-dark add-btn">Add to cart</button>
-            <a class="btn btn-outline-dark" href="/">View</a>
-            <h4 style="display: inline-block;">€</h4>
-          </div>
+  {% for product in all_products %}
+  <div class="col">
+    <div class="card shadow-sm">
+      <img class="img-fluid" alt="Responsive image" src="{{ product.image.url }}">
+      <div class="card-body">
+        <p class="card-text">
+          <a class="text-info text-decoration-none" href="">{{ product.slug }}</a>
+          <br>
+          <a class="text-info text-decoration-none" href="{{ product.get_absolute_url }}">{{ product.tittle | capfirst }}</a>
+        </p>
+        <div class="d-flex justify-content-between align-items-center">
+          <h5> € {{ product.price }} </h5>
+          <!-- <a class="text-info text-decoration-none" href="{% url 'product-info' product.slug %}"> product</a> -->
         </div>
-      </div>        
-    </div>
-   <!-- end python loop here -->
+      </div>
+    </div>        
   </div>
+  {% endfor %}
+</div>
 </div>
 </div>
 
