@@ -7,5 +7,5 @@ urlpatterns = [
 	path('cart/', views.cart, name="cart"),
 	path('checkout/', views.checkout, name="checkout"),
 	# Dinamic links for each product
-    # path('product/<slug:slug>/', views.product_info, name='product-info'),
+    path('product/<slug:slug>/', views.product_info, name='product-info'),
 ]
