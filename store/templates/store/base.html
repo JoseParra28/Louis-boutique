@@ -51,10 +51,10 @@
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>                            
                             <a class="dropdown-item" href="{% url 'store' %}"> all </a>                        
-                        </li>                    
+                        </li>        
                         {% for category in all_categories %}
-                        <a class="dropdown-item" href=""> {{ category.name | capfirst }} </a>
-                        {% endfor %}                   
+                        <a class="dropdown-item" href="{{ category.get_absolute_url }}"> {{ category.name | capfirst }} </a>
+                        {% endfor %}                              
                     </ul>
                 </li>
             </ul>
@@ -68,6 +68,7 @@
                             <span class="icon">
                                 <i class="fas fa-search"></i>
                             </span>
+                            
                         </button>
                     </div>
                 </div>

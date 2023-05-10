@@ -25,14 +25,14 @@ class Category(models.Model):
         return self.name
 
 
-    def get_absolute_url(self):
-        return reverse('category-list', args=[self.slug])  
+    # def get_absolute_url(self):
+    #     return reverse('category-list', args=[self.slug])  
 
 
 # --------------------------------- Products model
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.CASCADE)
-    tittle = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)
     price = models.FloatField()
     digital = models.BooleanField(default=False,null=True, blank=True)
     description = models.TextField(max_length=250, blank=True)
@@ -43,11 +43,11 @@ class Product(models.Model):
         verbose_name_plural = 'products' 
 
     def __str__(self):
-        return self.tittle  
+        return self.name  
 
 
-    def get_absolute_url(self):
-        return reverse('product-info', args=[self.slug]) 
+    # def get_absolute_url(self):
+    #     return reverse('product-info', args=[self.slug]) 
 
 # --------------------------------- General order model
 class Order(models.Model):
